@@ -16,7 +16,7 @@ return {
         "tailwindcss-language-server",
         "css-lsp",
         "cssmodules-language-server",
-        "typescript-language-server",
+        -- "typescript-language-server",
         "yaml-language-server",
 
         "eslint_d",
