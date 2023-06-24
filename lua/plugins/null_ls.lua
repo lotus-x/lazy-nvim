@@ -28,7 +28,6 @@ return {
         root_dir = require("null-ls.utils").root_pattern(".null-ls-root", ".neoconf.json", "Makefile", ".git"),
         sources = {
           nls.builtins.formatting.stylua,
-          nls.builtins.diagnostics.flake8,
 
           nls.builtins.formatting.prettier.with({
             extra_filetypes = { "gohtmltmpl" },
@@ -62,6 +61,8 @@ return {
           }),
 
           nls.builtins.formatting.taplo,
+
+          nls.builtins.formatting.black,
         },
       }
     end,

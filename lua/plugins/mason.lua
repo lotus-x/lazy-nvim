@@ -6,7 +6,6 @@ return {
         "stylua",
         "shellcheck",
         "shfmt",
-        "flake8",
 
         "dockerfile-language-server",
         "lua-language-server",
@@ -16,7 +15,6 @@ return {
         "tailwindcss-language-server",
         "css-lsp",
         "cssmodules-language-server",
-        -- "typescript-language-server",
         "yaml-language-server",
 
         "eslint_d",
@@ -33,6 +31,11 @@ return {
         "xo",
         "marksman",
         "taplo",
+
+        "ruff",
+        "ruff-lsp",
+        "black",
+        "pyright",
       },
     },
   },

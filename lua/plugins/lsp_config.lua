@@ -68,6 +68,8 @@ return {
         gopls = {},
         marksman = {},
         taplo = {},
+        ruff_lsp = {},
+        pyright = {},
       },
       setup = {
         gopls = function(_, opts)
