@@ -41,6 +41,10 @@ if Is_WSL()
 endif
 ]])
 
+-- remove auto commenting new lines
+vim.cmd("autocmd BufEnter * set formatoptions-=cro")
+vim.cmd("autocmd BufEnter * setlocal formatoptions-=cro")
+
 -- bootstrap lazy.nvim, LazyVim and your plugins
 require("config.lazy")
 
