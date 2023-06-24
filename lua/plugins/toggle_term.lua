@@ -14,6 +14,7 @@ return {
     opts = {
       open_mapping = [[<c-\>]],
       shade_terminals = false,
+      shell = "zsh",
     },
   },
 }
