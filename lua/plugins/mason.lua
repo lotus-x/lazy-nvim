@@ -26,6 +26,7 @@ return {
         "gotests",
         "goimports-reviser",
         "golines",
+        "delve",
         "prettierd",
         "prettier",
         "xo",
