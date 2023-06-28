@@ -7,6 +7,7 @@ return {
     opts = {
       -- flavour = "macchiato",
       flavour = "latte",
+      -- no_italic = true,
       integrations = {
         telescope = true,
         neotree = true,

@@ -9,7 +9,6 @@ return {
         desc = "Symbols Outline Toggle",
         remap = true,
       },
-
-    }
-  }
+    },
+  },
 }
