@@ -10,21 +10,56 @@ local opt = vim.opt
 
 opt.relativenumber = false
 
-vim.cmd([[
-if exists("g:neovide")
-    set guifont=FiraCode\ Nerd\ Font:h9
-    let g:neovide_hide_mouse_when_typing = v:true
-    " let g:neovide_refresh_rate = 144
-    " let g:neovide_refresh_rate_idle = 60
-    let g:neovide_no_idle = v:true
-    let g:neovide_cursor_vfx_mode = "pixiedust"
-    let g:neovide_cursor_vfx_mode = "sonicboom"
+opt.shell = "/bin/bash"
 
-    let g:neovide_scale_factor = 1.0
-    function! ChangeScaleFactor(delta)
-      let g:neovide_scale_factor = g:neovide_scale_factor * a:delta
-    endfunction
-    nnoremap <expr><C-=> ChangeScaleFactor(1.25)
-    nnoremap <expr><C--> ChangeScaleFactor(1/1.25)
+vim.cmd([[
+" for go template syntax highlighting
+function DetectGoHtmlTmpl()
+    if expand('%:e') == "html" && search("{{") != 0
+        setfiletype gohtmltmpl
+    endif
+endfunction
+
+augroup filetypedetect
+    " gohtmltmpl
+    au BufRead,BufNewFile *.html call DetectGoHtmlTmpl()
+augroup END
+]])
+
+vim.cmd([[
+function! Is_WSL() abort
+  let proc_version = '/proc/version'
+  return filereadable(proc_version)
+        \  ? !empty(filter(
+        \    readfile(proc_version, '', 1), { _, val -> val =~? 'microsoft' }))
+        \  : v:false
+endfunction
+
+if Is_WSL()
+  let g:clipboard = {
+    \   'name': 'WslClipboard',
+    \   'copy': {
+    \      '+': 'clip.exe',
+    \      '*': 'clip.exe',
+    \    },
+    \   'paste': {
+    \      '+': 'powershell.exe -c [Console]::Out.Write($(Get-Clipboard -Raw).tostring().replace("`r", ""))',
+    \      '*': 'powershell.exe -c [Console]::Out.Write($(Get-Clipboard -Raw).tostring().replace("`r", ""))',
+    \   },
+    \   'cache_enabled': 0,
+    \ }
 endif
 ]])
+
+-- remove auto commenting new lines
+vim.cmd("autocmd BufEnter * set formatoptions-=cro")
+vim.cmd("autocmd BufEnter * setlocal formatoptions-=cro")
+
+if vim.g.neovide then
+  vim.o.guifont = "FiraCode Nerd Font:h11"
+  vim.opt.linespace = 1
+  vim.g.neovide_padding_top = 5
+  vim.g.neovide_padding_bottom = 0
+  vim.g.neovide_padding_right = 5
+  vim.g.neovide_padding_left = 5
+end
