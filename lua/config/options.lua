@@ -63,3 +63,15 @@ if vim.g.neovide then
   vim.g.neovide_padding_right = 5
   vim.g.neovide_padding_left = 5
 end
+
+local latte = require("catppuccin.palettes").get_palette("latte")
+
+vim.cmd([[highlight! NeoTreeCursorLine guibg=]] .. latte.crust)
+
+local sign = vim.fn.sign_define
+
+sign("DapBreakpoint", { text = "●", texthl = "DapBreakpoint", linehl = "", numhl = "" })
+sign("DapBreakpointCondition", { text = "", texthl = "DapBreakpointCondition", linehl = "", numhl = "" })
+sign("DapLogPoint", { text = "◆", texthl = "DapLogPoint", linehl = "", numhl = "" })
+sign("DapStopped", { text = "", texthl = "DapStopped", linehl = "", numhl = "" })
+sign("DapBreakpointRejected", { text = "", texthl = "DapBreakpointRejected", linehl = "", numhl = "" })
