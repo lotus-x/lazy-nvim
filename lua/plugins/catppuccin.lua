@@ -5,15 +5,23 @@ return {
     lazy = false,
     name = "catppuccin",
     opts = {
-      -- flavour = "macchiato",
       flavour = "latte",
-      -- no_italic = true,
+      custom_highlights = function(colors)
+        local utils = require("catppuccin.utils.colors")
+        return {
+          NeoTreeCursorLine = { bg = colors.crust },
+          DiagnosticUnderlineError = { bg = utils.darken(colors.red, 0.095, colors.base), style = { nil } },
+          DiagnosticUnderlineWarn = { bg = utils.darken(colors.yellow, 0.095, colors.base), style = { nil } },
+          DiagnosticUnderlineInfo = { bg = utils.darken(colors.sky, 0.095, colors.base), style = { nil } },
+          DiagnosticUnderlineHint = { bg = utils.darken(colors.teal, 0.095, colors.base), style = { nil } },
+        }
+      end,
       integrations = {
         telescope = true,
         neotree = true,
         mason = true,
         lsp_trouble = true,
-        -- illuminate = true,
+        illuminate = true,
         gitsigns = true,
         indent_blankline = {
           enabled = true,
@@ -49,6 +57,9 @@ return {
             hints = { "underline" },
             warnings = { "underline" },
             information = { "underline" },
+          },
+          inlay_hints = {
+            background = true,
           },
         },
         treesitter_context = false,
