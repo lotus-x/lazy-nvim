@@ -13,20 +13,6 @@ opt.relativenumber = false
 opt.shell = "/bin/bash"
 
 vim.cmd([[
-" for go template syntax highlighting
-function DetectGoHtmlTmpl()
-    if expand('%:e') == "html" && search("{{") != 0
-        setfiletype gohtmltmpl
-    endif
-endfunction
-
-augroup filetypedetect
-    " gohtmltmpl
-    au BufRead,BufNewFile *.html call DetectGoHtmlTmpl()
-augroup END
-]])
-
-vim.cmd([[
 function! Is_WSL() abort
   let proc_version = '/proc/version'
   return filereadable(proc_version)
