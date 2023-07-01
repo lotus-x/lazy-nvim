@@ -64,47 +64,10 @@ return {
             },
           },
         },
-        dartls = {},
-        gopls = {},
         marksman = {},
         taplo = {},
         ruff_lsp = {},
         pyright = {},
-      },
-      setup = {
-        gopls = function(_, opts)
-          require("go").setup({
-            lsp_cfg = opts,
-            luasnip = true,
-            dap_debug_keymap = false,
-            lsp_keymaps = false,
-            icons = false,
-          })
-        end,
-        dartls = function(_, opts)
-          require("flutter-tools").setup({
-            decorations = {
-              statusline = {
-                app_version = true,
-                device = true,
-              },
-            },
-            debugger = {
-              enabled = true,
-              run_via_dap = true,
-            },
-            widget_guides = {
-              enabled = false,
-            },
-            lsp = {
-              color = {
-                enabled = true,
-              },
-              on_attach = opts.on_attach,
-              capabilities = opts.capabilities,
-            },
-          })
-        end,
       },
     },
   },

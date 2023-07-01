@@ -34,7 +34,6 @@ return {
 
         nls.builtins.diagnostics.golangci_lint,
         nls.builtins.diagnostics.staticcheck,
-        nls.builtins.formatting.gofmt,
         nls.builtins.formatting.goimports,
         nls.builtins.formatting.goimports_reviser,
         nls.builtins.formatting.golines,

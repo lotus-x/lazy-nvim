@@ -21,7 +21,6 @@ return {
         "cspell",
         "golangci-lint",
         "staticcheck",
-        "gopls",
         "goimports",
         "gotests",
         "goimports-reviser",
