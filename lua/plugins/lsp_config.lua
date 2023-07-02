@@ -65,7 +65,6 @@ return {
           },
         },
         marksman = {},
-        taplo = {},
         ruff_lsp = {},
         pyright = {},
       },

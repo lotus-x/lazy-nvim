@@ -30,7 +30,6 @@ return {
         "prettier",
         "xo",
         "marksman",
-        "taplo",
 
         "ruff",
         "ruff-lsp",
