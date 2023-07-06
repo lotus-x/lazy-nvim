@@ -28,13 +28,9 @@ return {
         "delve",
         "prettierd",
         "prettier",
-        "xo",
         "marksman",
 
-        "ruff",
-        "ruff-lsp",
         "black",
-        "pyright",
       },
     },
   },

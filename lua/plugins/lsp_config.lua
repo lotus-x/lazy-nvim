@@ -65,8 +65,6 @@ return {
           },
         },
         marksman = {},
-        ruff_lsp = {},
-        pyright = {},
       },
     },
   },
