@@ -10,7 +10,7 @@ local opt = vim.opt
 
 opt.relativenumber = false
 
-opt.shell = "/bin/bash"
+-- opt.shell = "/bin/bash"
 
 vim.cmd([[
 function! Is_WSL() abort
