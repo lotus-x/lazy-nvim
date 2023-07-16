@@ -14,17 +14,17 @@ return {
       end
     end,
     opts = {
+      autoformat = false,
       format = { timeout_ms = 20000, async = true },
       servers = {
         lua_ls = {
+          on_attach = function(client)
+            client.server_capabilities.documentFormattingProvider = false
+            client.server_capabilities.documentRangeFormattingProvider = false
+          end,
           settings = {
             Lua = {
-              workspace = {
-                checkThirdParty = false,
-              },
-              completion = {
-                callSnippet = "Replace",
-              },
+              format = { enable = false },
             },
           },
         },
@@ -33,6 +33,10 @@ return {
         cssls = {},
         cssmodules_ls = {},
         yamlls = {
+          on_attach = function(client)
+            client.server_capabilities.documentFormattingProvider = false
+            client.server_capabilities.documentRangeFormattingProvider = false
+          end,
           on_new_config = function(new_config)
             new_config.settings.yaml.schemaStore.enable = false
             new_config.settings.yaml.schemas = new_config.settings.yaml.schemas or {}
@@ -41,6 +45,9 @@ return {
           settings = {
             yaml = {
               keyOrdering = false,
+              format = {
+                enable = false,
+              },
               customTags = {
                 "!Base64 scalar",
                 "!Cidr scalar",
@@ -65,6 +72,19 @@ return {
           },
         },
         marksman = {},
+        jsonls = {
+          on_attach = function(client)
+            client.server_capabilities.documentFormattingProvider = false
+            client.server_capabilities.documentRangeFormattingProvider = false
+          end,
+          settings = {
+            json = {
+              format = {
+                enable = false,
+              },
+            },
+          },
+        },
       },
     },
   },

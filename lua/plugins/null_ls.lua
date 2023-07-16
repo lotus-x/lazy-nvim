@@ -24,25 +24,10 @@ return {
         })
       end
 
-      vim.list_extend(opts.sources, {
-        nls.builtins.formatting.prettier.with({
-          extra_filetypes = { "gohtmltmpl" },
-        }),
-
-        nls.builtins.diagnostics.cspell,
+      opts.sources = {
         nls.builtins.code_actions.cspell,
 
-        nls.builtins.diagnostics.golangci_lint,
-        nls.builtins.diagnostics.staticcheck,
-        nls.builtins.formatting.goimports,
-        nls.builtins.formatting.goimports_reviser,
-        nls.builtins.formatting.golines,
-
         nls.builtins.code_actions.eslint_d.with({
-          condition = eslint_condition,
-          prefer_local = "node_modules/.bin",
-        }),
-        nls.builtins.diagnostics.eslint_d.with({
           condition = eslint_condition,
           prefer_local = "node_modules/.bin",
         }),
@@ -50,15 +35,7 @@ return {
           condition = xo_condition,
           prefer_local = "node_modules/.bin",
         }),
-        nls.builtins.diagnostics.xo.with({
-          condition = xo_condition,
-          prefer_local = "node_modules/.bin",
-        }),
-
-        nls.builtins.formatting.taplo,
-
-        nls.builtins.formatting.black,
-      })
+      }
     end,
   },
 }

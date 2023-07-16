@@ -14,6 +14,10 @@ return {
           DiagnosticUnderlineWarn = { bg = utils.darken(colors.yellow, 0.095, colors.base), style = { nil } },
           DiagnosticUnderlineInfo = { bg = utils.darken(colors.sky, 0.095, colors.base), style = { nil } },
           DiagnosticUnderlineHint = { bg = utils.darken(colors.teal, 0.095, colors.base), style = { nil } },
+          DiagnosticError = { bg = utils.darken(colors.red, 0.095, colors.base), style = { nil } },
+          DiagnosticWarn = { bg = utils.darken(colors.yellow, 0.095, colors.base), style = { nil } },
+          DiagnosticInfo = { bg = utils.darken(colors.sky, 0.095, colors.base), style = { nil } },
+          DiagnosticHint = { bg = utils.darken(colors.teal, 0.095, colors.base), style = { nil } },
         }
       end,
       integrations = {
