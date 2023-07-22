@@ -7,7 +7,6 @@ return {
         "shellcheck",
         "shfmt",
 
-        "dockerfile-language-server",
         "lua-language-server",
         "json-lsp",
         "haskell-language-server",
@@ -17,13 +16,7 @@ return {
         "cssmodules-language-server",
         "yaml-language-server",
 
-        "eslint_d",
         "cspell",
-        "golangci-lint",
-        "staticcheck",
-        "goimports",
-        "gotests",
-        "goimports-reviser",
         "golines",
         "delve",
         "prettierd",

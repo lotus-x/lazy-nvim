@@ -28,7 +28,6 @@ return {
             },
           },
         },
-        dockerls = {},
         vimls = {},
         cssls = {},
         cssmodules_ls = {},
