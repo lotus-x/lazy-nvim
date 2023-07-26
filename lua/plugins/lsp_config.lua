@@ -14,7 +14,7 @@ return {
       end
     end,
     opts = {
-      format = { timeout_ms = 20000, async = true },
+      format = { timeout_ms = 20000 },
       servers = {
         lua_ls = {
           settings = {
@@ -32,14 +32,11 @@ return {
         cssls = {},
         cssmodules_ls = {},
         yamlls = {
-          on_new_config = function(new_config)
-            new_config.settings.yaml.schemaStore.enable = false
-            new_config.settings.yaml.schemas = new_config.settings.yaml.schemas or {}
-            vim.list_extend(new_config.settings.yaml.schemas, require("schemastore").yaml.schemas())
-          end,
           settings = {
             yaml = {
-              keyOrdering = false,
+              format = {
+                enable = false,
+              },
               customTags = {
                 "!Base64 scalar",
                 "!Cidr scalar",
