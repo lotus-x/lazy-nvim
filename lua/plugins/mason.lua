@@ -6,6 +6,7 @@ return {
         "stylua",
         "shellcheck",
         "shfmt",
+        "tree-sitter-cli",
 
         "lua-language-server",
         "json-lsp",
