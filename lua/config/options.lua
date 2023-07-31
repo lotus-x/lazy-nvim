@@ -1,41 +1,7 @@
--- Options are automatically loaded before lazy.nvim startup
--- Default options that are always set: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/options.lua
--- Add any additional options here
-
--- vim.api.nvim_set_hl(0, "IlluminatedWordText", { link = "Visual" })
--- vim.api.nvim_set_hl(0, "IlluminatedWordRead", { link = "Visual" })
--- vim.api.nvim_set_hl(0, "IlluminatedWordWrite", { link = "Visual" })
-
 local opt = vim.opt
 
 opt.relativenumber = false
-
--- opt.shell = "/bin/bash"
-
-vim.cmd([[
-function! Is_WSL() abort
-  let proc_version = '/proc/version'
-  return filereadable(proc_version)
-        \  ? !empty(filter(
-        \    readfile(proc_version, '', 1), { _, val -> val =~? 'microsoft' }))
-        \  : v:false
-endfunction
-
-if Is_WSL()
-  let g:clipboard = {
-    \   'name': 'WslClipboard',
-    \   'copy': {
-    \      '+': 'clip.exe',
-    \      '*': 'clip.exe',
-    \    },
-    \   'paste': {
-    \      '+': 'powershell.exe -c [Console]::Out.Write($(Get-Clipboard -Raw).tostring().replace("`r", ""))',
-    \      '*': 'powershell.exe -c [Console]::Out.Write($(Get-Clipboard -Raw).tostring().replace("`r", ""))',
-    \   },
-    \   'cache_enabled': 0,
-    \ }
-endif
-]])
+opt.clipboard = "unnamedplus"
 
 -- remove auto commenting new lines
 vim.cmd("autocmd BufEnter * set formatoptions-=cro")
