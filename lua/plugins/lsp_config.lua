@@ -84,6 +84,8 @@ return {
           },
         },
         marksman = {},
+        intelephense = {},
+        volar = {},
       },
     },
   },

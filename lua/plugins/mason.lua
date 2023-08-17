@@ -25,6 +25,10 @@ return {
         "marksman",
 
         "black",
+
+        "php-cs-fixer",
+        "phpcs",
+        "blade-formatter",
       },
     },
   },

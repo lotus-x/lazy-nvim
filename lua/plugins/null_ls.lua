@@ -18,6 +18,10 @@ return {
         nls.builtins.formatting.taplo,
 
         nls.builtins.formatting.black,
+
+        nls.builtins.formatting.phpcsfixer,
+        -- nls.builtins.diagnostics.phpcs,
+        nls.builtins.formatting.blade_formatter,
       })
     end,
   },
