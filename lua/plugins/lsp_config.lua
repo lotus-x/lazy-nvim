@@ -15,6 +15,14 @@ return {
     end,
     opts = {
       format = { timeout_ms = 20000 },
+      capabilities = {
+        textDocument = {
+          foldingRange = {
+            dynamicRegistration = false,
+            lineFoldingOnly = true,
+          },
+        },
+      },
       servers = {
         lua_ls = {
           settings = {
