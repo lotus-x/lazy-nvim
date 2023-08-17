@@ -31,6 +31,16 @@ return {
       vim.o.fillchars = [[eob: ,fold: ,foldopen:,foldsep: ,foldclose:]]
     end,
     opts = {
+      provider_selector = function(_, ft, _)
+        local lspWithOutFolding = { "markdown" }
+        if vim.tbl_contains(lspWithOutFolding, ft) then
+          return { "treesitter", "indent" }
+        -- elseif ft == "html" then
+        --   return { "indent" }
+        else
+          return { "lsp", "indent" }
+        end
+      end,
       fold_virt_text_handler = function(virtText, lnum, endLnum, width, truncate)
         local newVirtText = {}
         local totalLines = vim.api.nvim_buf_line_count(0)
