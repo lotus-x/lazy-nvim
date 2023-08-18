@@ -4,13 +4,15 @@ return {
     keys = function()
       return {}
     end,
-    config = function()
+    dependencies = {
+      "rafamadriz/friendly-snippets",
+    },
+    config = function(_, opts)
       local luasnip = require("luasnip")
 
-      require("luasnip.loaders.from_vscode").lazy_load({ paths = { "./snippets/vscode" } })
+      luasnip.setup(opts)
 
-      luasnip.filetype_extend("typescript", { "javascript" })
-      luasnip.filetype_extend("typescriptreact", { "javascriptreact" })
+      require("luasnip.loaders.from_vscode").lazy_load({ paths = { "./snippets/vscode" } })
     end,
   },
 }
