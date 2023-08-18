@@ -5,6 +5,7 @@ return {
       ensure_installed = "all",
       autotag = {
         enable = true,
+        enable_close_on_slash = false,
       },
     },
   },
