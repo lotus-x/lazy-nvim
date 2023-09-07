@@ -17,6 +17,8 @@ return {
         "cssmodules-language-server",
         "yaml-language-server",
 
+        "hadolint",
+
         "cspell",
         "golines",
         "delve",

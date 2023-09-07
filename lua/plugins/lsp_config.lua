@@ -94,6 +94,7 @@ return {
         marksman = {},
         intelephense = {},
         volar = {},
+        lemminx = {},
       },
     },
   },
