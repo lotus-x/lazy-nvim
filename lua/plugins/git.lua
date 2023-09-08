@@ -5,13 +5,19 @@ return {
     "sindrets/diffview.nvim",
     keys = {
       {
-        "<leader>gd",
+        "<leader>gdo",
+        "<Cmd>DiffviewOpen<CR>",
+        desc = "Diff View Open",
+        remap = true,
+      },
+      {
+        "<leader>gdh",
         "<Cmd>DiffviewFileHistory<CR>",
         desc = "Diff View File History",
         remap = true,
       },
       {
-        "<leader>gD",
+        "<leader>gdc",
         "<Cmd>DiffviewFileHistory %<CR>",
         desc = "Diff View Current File History",
         remap = true,
