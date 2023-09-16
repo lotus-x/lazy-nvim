@@ -13,7 +13,7 @@ return {
     keys = {
       {
         "<leader>o",
-        "<Cmd>AerialToggle!<CR>",
+        "<Cmd>AerialToggle<CR>",
         desc = "Aerial Toggle",
         remap = true,
       },
