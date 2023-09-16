@@ -3,12 +3,13 @@ return {
     "nvim-neo-tree/neo-tree.nvim",
     opts = {
       enable_normal_mode_for_inputs = true,
+      auto_clean_after_session_restore = true,
       filesystem = {
         filtered_items = {
           hide_dotfiles = false,
           hide_gitignored = false,
         },
-        follow_current_file = true,
+        follow_current_file = { enabled = true },
         use_libuv_file_watcher = true,
       },
       default_component_configs = {
