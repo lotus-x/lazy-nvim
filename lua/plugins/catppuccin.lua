@@ -14,6 +14,7 @@ return {
           DiagnosticUnderlineWarn = { bg = utils.darken(colors.yellow, 0.095, colors.base), style = { nil } },
           DiagnosticUnderlineInfo = { bg = utils.darken(colors.sky, 0.095, colors.base), style = { nil } },
           DiagnosticUnderlineHint = { bg = utils.darken(colors.teal, 0.095, colors.base), style = { nil } },
+          MarkSignHL = { fg = colors.pink },
         }
       end,
       integrations = {

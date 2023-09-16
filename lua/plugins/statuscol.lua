@@ -22,6 +22,17 @@ return {
           {
             sign = {
               name = {
+                "Mark",
+              },
+              maxwidth = 1,
+              colwidth = 1,
+              auto = true,
+            },
+            click = "v:lua.ScSa",
+          },
+          {
+            sign = {
+              name = {
                 "Diagnostic",
               },
               auto = true,
