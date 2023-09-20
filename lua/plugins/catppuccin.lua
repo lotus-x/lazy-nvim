@@ -67,6 +67,7 @@ return {
         treesitter = true,
         symbols_outline = false,
         notifier = true,
+        flash = true,
       },
     },
   },
