@@ -40,20 +40,10 @@ return {
         cssls = {},
         cssmodules_ls = {},
         yamlls = {
-          on_new_config = function(new_config)
-            new_config.settings.yaml.schemas = require("schemastore").yaml.schemas()
-          end,
           settings = {
-            redhat = { telemetry = { enabled = false } },
             yaml = {
-              keyOrdering = false,
               format = {
                 enable = false,
-              },
-              validate = { enable = true },
-              schemaStore = {
-                enable = false,
-                url = "",
               },
               customTags = {
                 "!Base64 scalar",
@@ -79,15 +69,11 @@ return {
           },
         },
         jsonls = {
-          on_new_config = function(new_config)
-            new_config.settings.json.schemas = require("schemastore").json.schemas()
-          end,
           settings = {
             json = {
               format = {
                 enable = false,
               },
-              validate = { enable = true },
             },
           },
         },

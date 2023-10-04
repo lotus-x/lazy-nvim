@@ -1,28 +1,20 @@
 return {
   {
-    "jose-elias-alvarez/null-ls.nvim",
-    opts = function(_, opts)
+    "nvimtools/none-ls.nvim",
+    opts = function()
       local nls = require("null-ls")
 
-      vim.list_extend(opts.sources, {
-        nls.builtins.formatting.prettier.with({
-          extra_filetypes = { "gohtmltmpl" },
-        }),
+      return {
+        sources = {
+          nls.builtins.diagnostics.cspell,
+          nls.builtins.code_actions.cspell,
 
-        nls.builtins.diagnostics.cspell,
-        nls.builtins.code_actions.cspell,
+          nls.builtins.code_actions.gomodifytags,
+          nls.builtins.code_actions.impl,
 
-        nls.builtins.formatting.goimports,
-        nls.builtins.formatting.golines,
-
-        nls.builtins.formatting.taplo,
-
-        nls.builtins.formatting.black,
-
-        nls.builtins.formatting.phpcsfixer,
-        -- nls.builtins.diagnostics.phpcs,
-        nls.builtins.formatting.blade_formatter,
-      })
+          nls.builtins.formatting.blade_formatter,
+        },
+      }
     end,
   },
 }
