@@ -11,7 +11,7 @@ return {
       },
     },
     opts = {
-      preserve = true,
+      -- preserve = true,
       highlighter = {
         auto_enable = true,
         lsp = true,
