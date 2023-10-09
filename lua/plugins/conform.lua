@@ -6,7 +6,6 @@ return {
         ["gohtmltmpl"] = { { "prettierd", "prettier" } },
         go = { "goimports", "golines" },
         toml = { "taplo" },
-        python = { "black" },
         php = { "php_cs_fixer" },
       },
     },

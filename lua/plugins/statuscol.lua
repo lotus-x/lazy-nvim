@@ -10,6 +10,17 @@ return {
           {
             sign = {
               name = {
+                "todo",
+              },
+              maxwidth = 1,
+              colwidth = 1,
+              auto = true,
+            },
+            click = "v:lua.ScSa",
+          },
+          {
+            sign = {
+              name = {
                 "Dap",
                 "neotest",
               },
@@ -46,7 +57,18 @@ return {
           },
           {
             sign = {
-              name = { "GitSigns" },
+              name = {
+                "goCoverage",
+              },
+              maxwidth = 1,
+              colwidth = 1,
+              auto = true,
+            },
+            click = "v:lua.ScSa",
+          },
+          {
+            sign = {
+              namespace = { "gitsigns" },
               maxwidth = 1,
               colwidth = 1,
               auto = false,
