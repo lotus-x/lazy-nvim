@@ -81,6 +81,7 @@ return {
         intelephense = {},
         volar = {},
         lemminx = {},
+        emmet_language_server = {},
       },
     },
   },
