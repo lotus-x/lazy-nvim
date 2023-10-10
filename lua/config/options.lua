@@ -2,6 +2,7 @@ local opt = vim.opt
 
 opt.relativenumber = false
 opt.clipboard = "unnamedplus"
+opt.colorcolumn = "80"
 
 -- remove auto commenting new lines
 vim.cmd("autocmd BufEnter * set formatoptions-=cro")

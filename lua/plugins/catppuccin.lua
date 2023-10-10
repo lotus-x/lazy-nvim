@@ -68,6 +68,10 @@ return {
         symbols_outline = false,
         notifier = true,
         flash = true,
+        dropbar = {
+          enabled = false,
+          color_mode = false,
+        },
       },
     },
   },
