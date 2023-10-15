@@ -1,14 +1,11 @@
 return {
   {
     "stevearc/aerial.nvim",
-    dependencies = {
-      "nvim-treesitter/nvim-treesitter",
-      "nvim-tree/nvim-web-devicons",
-    },
     opts = {
-      backends = { "lsp", "treesitter", "markdown", "man" },
-      filter_kind = false,
-      show_guides = true,
+      autojump = true,
+      link_tree_to_folds = false,
+      close_on_select = true,
+      close_automatic_events = { "unfocus", "switch_buffer" },
     },
     keys = {
       {

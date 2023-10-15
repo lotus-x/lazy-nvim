@@ -11,8 +11,6 @@ return {
 
           nls.builtins.code_actions.gomodifytags,
           nls.builtins.code_actions.impl,
-
-          nls.builtins.formatting.blade_formatter,
         },
       }
     end,

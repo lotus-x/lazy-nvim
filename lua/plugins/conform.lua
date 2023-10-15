@@ -4,9 +4,9 @@ return {
     opts = {
       formatters_by_ft = {
         ["gohtmltmpl"] = { { "prettierd", "prettier" } },
-        go = { "goimports", "golines" },
+        go = { "golines" },
         toml = { "taplo" },
-        php = { "php_cs_fixer" },
+        php = { "blade-formatter", "php_cs_fixer" },
       },
     },
   },

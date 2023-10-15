@@ -11,11 +11,15 @@ return {
         ["<C-j>"] = cmp.mapping.select_next_item(),
         ["<C-Space>"] = cmp.mapping.complete({}),
         ["<C-e>"] = cmp.mapping.abort(),
-        ["<CR>"] = cmp.mapping.confirm(), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
+        ["<CR>"] = cmp.mapping.confirm({ select = true }),
         ["<S-CR>"] = cmp.mapping.confirm({
           behavior = cmp.ConfirmBehavior.Replace,
           select = true,
         }),
+        ["<C-CR>"] = function(fallback)
+          cmp.abort()
+          fallback()
+        end,
         ["<Tab>"] = cmp.mapping(function(fallback)
           if luasnip.locally_jumpable(1) then
             luasnip.jump(1)

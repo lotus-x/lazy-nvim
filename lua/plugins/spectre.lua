@@ -36,7 +36,5 @@ return {
         remap = true,
       },
     },
-    opts = {},
-    lazy = true,
   },
 }
