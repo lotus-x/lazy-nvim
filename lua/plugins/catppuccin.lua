@@ -87,4 +87,15 @@ return {
       colorscheme = "catppuccin",
     },
   },
+
+  {
+    "glepnir/lspsaga.nvim",
+    opts = function(_, opts)
+      opts.ui = vim.tbl_deep_extend("force", opts.ui or {}, {
+        border = "rounded",
+        colors = require("catppuccin.groups.integrations.lsp_saga").custom_colors(),
+        kind = require("catppuccin.groups.integrations.lsp_saga").custom_kind(),
+      })
+    end,
+  },
 }
