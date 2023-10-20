@@ -4,7 +4,7 @@ return {
     lazy = false,
     keys = {
       {
-        "<leader>cp",
+        "<leader>cP",
         "<Cmd>CccPick<CR>",
         desc = "Color Picker",
         remap = true,
