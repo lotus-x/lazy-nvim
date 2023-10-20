@@ -2,7 +2,9 @@ return {
   {
     "windwp/nvim-autopairs",
     event = "InsertEnter",
-    opts = {},
+    opts = {
+      check_ts = true,
+    },
     init = function()
       local cmp_autopairs = require("nvim-autopairs.completion.cmp")
       local cmp = require("cmp")
