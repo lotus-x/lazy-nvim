@@ -6,6 +6,7 @@ return {
     name = "catppuccin",
     opts = {
       flavour = "latte",
+      transparent_background = true,
       custom_highlights = function(colors)
         local utils = require("catppuccin.utils.colors")
         return {
@@ -15,6 +16,7 @@ return {
           DiagnosticUnderlineInfo = { bg = utils.darken(colors.sky, 0.095, colors.base), style = { nil } },
           DiagnosticUnderlineHint = { bg = utils.darken(colors.teal, 0.095, colors.base), style = { nil } },
           MarkSignHL = { fg = colors.pink },
+          NotifyBackground = { bg = "#000000" },
         }
       end,
       integrations = {
