@@ -9,7 +9,7 @@ vim.cmd("autocmd BufEnter * set formatoptions-=cro")
 vim.cmd("autocmd BufEnter * setlocal formatoptions-=cro")
 
 if vim.g.neovide then
-  vim.o.guifont = "FiraCode Nerd Font:h11"
+  vim.o.guifont = "Monaspace Neon,JetBrainsMono Nerd Font:h9"
   vim.opt.linespace = 1
   vim.g.neovide_padding_top = 5
   vim.g.neovide_padding_bottom = 0

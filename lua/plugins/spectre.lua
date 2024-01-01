@@ -1,7 +1,7 @@
 return {
   {
     "nvim-pack/nvim-spectre",
-    key = {
+    keys = {
       {
         "<leader>Ss",
         function()
@@ -34,6 +34,15 @@ return {
         end,
         desc = "Search on current file",
         remap = true,
+      },
+      {
+        "<leader>Sp",
+        function()
+          require("spectre").open_file_search({ select_word = true })
+        end,
+        desc = "Search on current file",
+        remap = true,
+        mode = "v",
       },
     },
   },
