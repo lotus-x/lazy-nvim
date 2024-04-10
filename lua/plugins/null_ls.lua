@@ -6,9 +6,6 @@ return {
 
       return {
         sources = {
-          nls.builtins.diagnostics.cspell,
-          nls.builtins.code_actions.cspell,
-
           nls.builtins.code_actions.gomodifytags,
           nls.builtins.code_actions.impl,
         },

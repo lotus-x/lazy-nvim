@@ -97,7 +97,7 @@ local file_sorter = function(opts)
     discard = fzy_sorter.discard,
 
     scoring_function = function(_, prompt, line)
-      -- Check for actual matches before running the scoring alogrithm.
+      -- Check for actual matches before running the scoring algorithm.
       if not fzy.has_match(prompt, line) then
         return -1
       end

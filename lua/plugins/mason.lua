@@ -1,6 +1,7 @@
 return {
   {
     "williamboman/mason.nvim",
+    dependencies = { "mason-org/mason-registry" },
     opts = {
       ensure_installed = {
         "stylua",
@@ -16,10 +17,11 @@ return {
         "css-lsp",
         "cssmodules-language-server",
         "yaml-language-server",
+        "vue-language-server",
+        "vtsls",
 
         "hadolint",
 
-        "cspell",
         "golines",
         "delve",
         "prettierd",
@@ -31,6 +33,9 @@ return {
         "php-cs-fixer",
         "phpcs",
         "blade-formatter",
+
+        "typos",
+        "typos-lsp",
       },
     },
   },

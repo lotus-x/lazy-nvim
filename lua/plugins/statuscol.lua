@@ -5,37 +5,9 @@ return {
     opts = function()
       local builtin = require("statuscol.builtin")
 
-      ---@return Sign?
-      ---@param buf number
-      ---@param lnum number
-      function M.get_mark(buf, lnum)
-        local marks = vim.fn.getmarklist(buf)
-        vim.list_extend(marks, vim.fn.getmarklist())
-        for _, mark in ipairs(marks) do
-          if mark.pos[1] == buf and mark.pos[2] == lnum and mark.mark:match("[a-zA-Z]") then
-            return mark.mark:sub(2)
-          end
-        end
-      end
-
       return {
         segments = {
           -- { text = { "%s", " " }, click = "v:lua.ScSa" },
-          {
-            text = {
-              function(args)
-                return M.get_mark(args.buf, args.lnum)
-              end,
-              " ",
-            },
-            condition = {
-              function(args)
-                return M.get_mark(args.buf, args.lnum) ~= nil
-              end,
-              true,
-            },
-            hl = "DiagnosticHint",
-          },
           {
             sign = {
               name = {
