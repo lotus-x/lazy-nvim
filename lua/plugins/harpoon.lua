@@ -1,24 +1,22 @@
 return {
   {
     "ThePrimeagen/harpoon",
-    lazy = false,
-    enabled = false,
+    branch = "harpoon2",
+    dependencies = { "nvim-lua/plenary.nvim" },
     opts = {},
     keys = {
       {
         "<leader>ha",
         function()
-          require("harpoon.mark").add_file()
+          require("harpoon"):list():add()
         end,
-        desc = "Create comment box from text",
         remap = true,
       },
       {
         "<leader>hl",
         function()
-          require("harpoon.ui").toggle_quick_menu()
+          require("harpoon").ui:toggle_quick_menu(require("harpoon"):list())
         end,
-        desc = "Create comment box from text",
         remap = true,
       },
     },

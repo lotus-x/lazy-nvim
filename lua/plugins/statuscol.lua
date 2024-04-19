@@ -66,6 +66,22 @@ return {
             },
             click = "v:lua.ScSa",
           },
+          -- {
+          --   sign = {
+          --     namespace = { "MiniDiffViz" },
+          --     maxwidth = 1,
+          --     colwidth = 1,
+          --   },
+          --   click = "v:lua.ScSa",
+          -- },
+          -- {
+          --   sign = {
+          --     namespace = { "Mark" },
+          --     -- maxwidth = 1,
+          --     -- colwidth = 1,
+          --   },
+          --   click = "v:lua.ScSa",
+          -- },
           { text = { builtin.foldfunc, " " }, click = "v:lua.ScFa" },
         },
         ft_ignore = {
