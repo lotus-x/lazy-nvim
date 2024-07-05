@@ -90,46 +90,6 @@ return {
           lemminx = {},
           emmet_language_server = {},
           typos_lsp = {},
-          vtsls = {
-            filetypes = {
-              "javascript",
-              "javascriptreact",
-              "javascript.jsx",
-              "typescript",
-              "typescriptreact",
-              "typescript.tsx",
-              "vue",
-            },
-            settings = {
-              vtsls = {
-                autoUseWorkspaceTsdk = true,
-                tsserver = {
-                  globalPlugins = {
-                    {
-                      name = "@vue/typescript-plugin",
-                      location = vue_language_server_path,
-                      languages = { "javascript", "typescript", "vue" },
-                      configNamespace = "typescript",
-                      enableForWorkspaceTypeScriptVersions = true,
-                    },
-                  },
-                },
-              },
-              typescript = {
-                -- tsserver = {
-                --   log = "verbose",
-                -- },
-                inlayHints = {
-                  parameterNames = { enabled = "literals" },
-                  parameterTypes = { enabled = true },
-                  variableTypes = { enabled = true },
-                  propertyDeclarationTypes = { enabled = true },
-                  functionLikeReturnTypes = { enabled = true },
-                  enumMemberValues = { enabled = true },
-                },
-              },
-            },
-          },
         },
       })
     end,
