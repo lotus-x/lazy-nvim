@@ -1,7 +1,7 @@
 return {
-  {
-    "Bekaboo/dropbar.nvim",
-    opts = {},
-    -- enabled = false,
-  },
+  -- {
+  --   "Bekaboo/dropbar.nvim",
+  --   opts = {},
+  --   -- enabled = false,
+  -- },
 }

@@ -1,7 +1,7 @@
 return {
   {
     "folke/persistence.nvim",
-    enabled = false,
+    -- enabled = false,
     opts = {
       options = {
         "buffers",
@@ -14,9 +14,9 @@ return {
         "folds",
         "terminal",
       },
-      pre_save = function()
-        vim.cmd("Neotree close")
-      end,
+      -- pre_save = function()
+      --   vim.cmd("Neotree close")
+      -- end,
     },
   },
 }
