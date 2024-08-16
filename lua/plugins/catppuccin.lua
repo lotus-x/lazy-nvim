@@ -51,7 +51,7 @@ return {
         --   enabled = true,
         --   indentscope_color = "",
         -- },
-        -- lsp_saga = true,
+        lsp_saga = true,
         -- leap = true,
         -- neogit = true,
         -- neotest = true,

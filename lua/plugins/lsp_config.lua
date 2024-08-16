@@ -1,18 +1,6 @@
 return {
   {
     "neovim/nvim-lspconfig",
-    -- init = function()
-    --   local keys = require("lazyvim.plugins.lsp.keymaps").get()
-    --   -- disable a keymap
-    --   -- keys[#keys + 1] = { "<leader>cd", false }
-    --   -- keys[#keys + 1] = { "<leader>cl", false }
-    --   -- keys[#keys + 1] = { "<leader>ca", false }
-    --   -- keys[#keys + 1] = { "<leader>cA", false }
-    --   -- keys[#keys + 1] = { "K", false }
-    --   for k in pairs(keys) do
-    --     keys[k] = nil
-    --   end
-    -- end,
     opts = {
       -- format = { timeout_ms = 20000 },
       -- capabilities = {
@@ -105,6 +93,9 @@ return {
           },
         },
         graphql = {},
+        dartls = {
+          enabled = false,
+        },
       },
     },
   },
