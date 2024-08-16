@@ -1,7 +1,7 @@
 return {
   {
     "williamboman/mason.nvim",
-    dependencies = { "mason-org/mason-registry" },
+    -- dependencies = { "mason-org/mason-registry" },
     opts = {
       ensure_installed = {
         "golines",

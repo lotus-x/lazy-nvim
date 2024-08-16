@@ -1,8 +1,8 @@
 local opt = vim.opt
 
 opt.relativenumber = false
--- opt.clipboard = "unnamedplus"
-opt.clipboard = ""
+opt.clipboard = "unnamedplus"
+-- opt.clipboard = ""
 opt.colorcolumn = "80"
 
 -- remove auto commenting new lines
@@ -42,17 +42,17 @@ sign("DapLogPoint", { text = "◆", texthl = "DapLogPoint", linehl = "", numhl =
 sign("DapStopped", { text = "", texthl = "DapStopped", linehl = "", numhl = "" })
 sign("DapBreakpointRejected", { text = "", texthl = "DapBreakpointRejected", linehl = "", numhl = "" })
 
-if vim.fn.has("wsl") == 1 then
-  vim.g.clipboard = {
-    name = "WslClipboard",
-    copy = {
-      ["+"] = "clip.exe",
-      ["*"] = "clip.exe",
-    },
-    paste = {
-      ["+"] = 'powershell.exe -c [Console]::Out.Write($(Get-Clipboard -Raw).tostring().replace("`r", ""))',
-      ["*"] = 'powershell.exe -c [Console]::Out.Write($(Get-Clipboard -Raw).tostring().replace("`r", ""))',
-    },
-    cache_enabled = 0,
-  }
-end
+-- if vim.fn.has("wsl") == 1 then
+--   vim.g.clipboard = {
+--     name = "WslClipboard",
+--     copy = {
+--       ["+"] = "clip.exe",
+--       ["*"] = "clip.exe",
+--     },
+--     paste = {
+--       ["+"] = 'powershell.exe -c [Console]::Out.Write($(Get-Clipboard -Raw).tostring().replace("`r", ""))',
+--       ["*"] = 'powershell.exe -c [Console]::Out.Write($(Get-Clipboard -Raw).tostring().replace("`r", ""))',
+--     },
+--     cache_enabled = 0,
+--   }
+-- end
