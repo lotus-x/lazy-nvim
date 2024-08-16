@@ -17,19 +17,19 @@ return {
     },
     keys = {
       {
-        "<leader>Sfr",
+        "<leader>Sfs",
         "<cmd>FlutterRun<cr>",
         desc = "Run the current project",
         remap = true,
       },
       {
-        "<leader>SfR",
+        "<leader>Sfr",
         "<cmd>FlutterRestart<cr>",
         desc = "Restart the current project",
         remap = true,
       },
       {
-        "<leader>Sfh",
+        "<leader>SfR",
         "<cmd>FlutterReload<cr>",
         desc = "Reload the running project",
         remap = true,
