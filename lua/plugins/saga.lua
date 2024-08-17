@@ -122,15 +122,20 @@ return {
       remap = true,
     },
   },
-  opts = {
-    symbol_in_winbar = {
-      enable = false,
-    },
-    lightbulb = {
-      enable = false,
-    },
-    implement = {
-      enable = false,
-    },
-  },
+  opts = function()
+    return {
+      symbol_in_winbar = {
+        enable = false,
+      },
+      lightbulb = {
+        enable = false,
+      },
+      implement = {
+        enable = false,
+      },
+      ui = {
+        kind = require("catppuccin.groups.integrations.lsp_saga").custom_kind(),
+      },
+    }
+  end,
 }
