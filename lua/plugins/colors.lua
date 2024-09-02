@@ -1,7 +1,7 @@
 return {
   {
     "uga-rosa/ccc.nvim",
-    lazy = false,
+    lazy = true,
     keys = {
       {
         "<leader>cp",
@@ -16,9 +16,8 @@ return {
       local flutterHex = require("utils.flutter-hex")
 
       return {
-        -- preserve = true,
         highlighter = {
-          auto_enable = true,
+          auto_enable = false,
           lsp = true,
         },
         outputs = {

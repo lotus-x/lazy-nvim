@@ -56,6 +56,7 @@ return {
   },
   {
     "wa11breaker/flutter-bloc.nvim",
+    enabled = false,
     lazy = true,
     keys = {
       {

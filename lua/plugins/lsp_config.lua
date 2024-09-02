@@ -12,7 +12,7 @@ return {
       --   },
       -- },
       inlay_hints = {
-        exclude = { "typescript" },
+        exclude = { "typescript", "vue" },
       },
       servers = {
         -- lua_ls = {
