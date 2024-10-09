@@ -42,30 +42,30 @@ sign("DapLogPoint", { text = "◆", texthl = "DapLogPoint", linehl = "", numhl =
 sign("DapStopped", { text = "", texthl = "DapStopped", linehl = "", numhl = "" })
 sign("DapBreakpointRejected", { text = "", texthl = "DapBreakpointRejected", linehl = "", numhl = "" })
 
--- if vim.fn.has("wsl") == 1 then
---   vim.g.clipboard = {
---     name = "WslClipboard",
---     copy = {
---       ["+"] = "clip.exe",
---       ["*"] = "clip.exe",
---     },
---     paste = {
---       ["+"] = 'powershell.exe -c [Console]::Out.Write($(Get-Clipboard -Raw).tostring().replace("`r", ""))',
---       ["*"] = 'powershell.exe -c [Console]::Out.Write($(Get-Clipboard -Raw).tostring().replace("`r", ""))',
---     },
---     cache_enabled = 0,
---   }
--- end
+if vim.fn.has("wsl") == 1 then
+  vim.g.clipboard = {
+    name = "WslClipboard",
+    copy = {
+      ["+"] = "clip.exe",
+      ["*"] = "clip.exe",
+    },
+    paste = {
+      ["+"] = 'powershell.exe -c [Console]::Out.Write($(Get-Clipboard -Raw).tostring().replace("`r", ""))',
+      ["*"] = 'powershell.exe -c [Console]::Out.Write($(Get-Clipboard -Raw).tostring().replace("`r", ""))',
+    },
+    cache_enabled = 0,
+  }
+end
 
-vim.g.clipboard = {
-  name = "xsel_override",
-  copy = {
-    ["+"] = "xsel --input --clipboard",
-    ["*"] = "xsel --input --primary",
-  },
-  paste = {
-    ["+"] = "xsel --output --clipboard",
-    ["*"] = "xsel --output --primary",
-  },
-  cache_enabled = 1,
-}
+-- vim.g.clipboard = {
+--   name = "xsel_override",
+--   copy = {
+--     ["+"] = "xsel --input --clipboard",
+--     ["*"] = "xsel --input --primary",
+--   },
+--   paste = {
+--     ["+"] = "xsel --output --clipboard",
+--     ["*"] = "xsel --output --primary",
+--   },
+--   cache_enabled = 1,
+-- }

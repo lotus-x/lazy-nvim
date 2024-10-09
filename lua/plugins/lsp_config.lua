@@ -1,6 +1,7 @@
 return {
   {
     "neovim/nvim-lspconfig",
+    -- version = "1.0.0",
     opts = {
       -- format = { timeout_ms = 20000 },
       -- capabilities = {
@@ -12,7 +13,7 @@ return {
       --   },
       -- },
       inlay_hints = {
-        exclude = { "typescript", "vue" },
+        exclude = { "typescript", "typescriptreact", "vue" },
       },
       servers = {
         -- lua_ls = {
