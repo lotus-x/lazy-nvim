@@ -29,8 +29,8 @@ return {
         --   },
         -- },
         -- vimls = {},
-        -- cssls = {},
-        -- cssmodules_ls = {},
+        cssls = {},
+        cssmodules_ls = {},
         yamlls = {
           settings = {
             yaml = {
