@@ -1,8 +1,8 @@
 local opt = vim.opt
 
 opt.relativenumber = false
-opt.clipboard = "unnamedplus"
--- opt.clipboard = ""
+-- opt.clipboard = "unnamedplus"
+opt.clipboard = ""
 opt.colorcolumn = "80"
 
 -- remove auto commenting new lines
@@ -69,3 +69,15 @@ end
 --   },
 --   cache_enabled = 1,
 -- }
+
+-- sync with system clipboard on focus
+vim.api.nvim_create_autocmd({ "FocusGained" }, {
+  pattern = { "*" },
+  command = [[call setreg("@", getreg("+"))]],
+})
+
+-- sync with system clipboard on focus
+vim.api.nvim_create_autocmd({ "FocusLost" }, {
+  pattern = { "*" },
+  command = [[call setreg("+", getreg("@"))]],
+})

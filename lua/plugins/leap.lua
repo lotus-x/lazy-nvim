@@ -1,9 +1,9 @@
 return {
-  {
-    "ggandor/flit.nvim",
-    -- enabled = false,
-    opts = {
-      multiline = false,
-    },
-  },
+  -- {
+  --   "ggandor/flit.nvim",
+  --   enabled = false,
+  --   opts = {
+  --     multiline = false,
+  --   },
+  -- },
 }
