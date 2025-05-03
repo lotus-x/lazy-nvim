@@ -9,6 +9,9 @@ opt.colorcolumn = "80"
 vim.cmd("autocmd BufEnter * set formatoptions-=cro")
 vim.cmd("autocmd BufEnter * setlocal formatoptions-=cro")
 
+-- prettier and biome
+vim.g.lazyvim_prettier_needs_config = true
+
 if vim.g.neovide then
   -- vim.o.guifont = "JetBrainsMono Nerd Font:h9"
   -- vim.o.guifont = "Monaspace Neon:h8"

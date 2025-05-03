@@ -97,6 +97,7 @@ return {
         dartls = {
           enabled = false,
         },
+        biome = {},
       },
     },
   },
