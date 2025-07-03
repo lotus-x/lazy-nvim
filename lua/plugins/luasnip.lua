@@ -5,7 +5,7 @@ return {
       local luasnip = require("luasnip")
 
       -- luasnip.setup(opts)
-      -- require("luasnip.loaders.from_vscode").lazy_load({ paths = { "./snippets/vscode" } })
+      -- require("luasnip.loaders.from_vscode").lazy_load({ paths = { "./snippets" } })
 
       luasnip.filetype_extend("typescript", { "javascript" })
       luasnip.filetype_extend("typescriptreact", { "javascriptreact" })

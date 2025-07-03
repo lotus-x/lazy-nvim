@@ -98,6 +98,7 @@ return {
           enabled = false,
         },
         biome = {},
+        html = {},
       },
     },
   },

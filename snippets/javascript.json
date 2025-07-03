@@ -1,0 +1,7 @@
+{
+  "async arrow bracketless function": {
+    "prefix": "aaa",
+    "body": "async (${1:arguments}) => ${2:statement}",
+    "description": "Async arrow bracketless function"
+  }
+}
