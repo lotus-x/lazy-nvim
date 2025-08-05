@@ -1,17 +1,7 @@
 return {
   {
     "neovim/nvim-lspconfig",
-    -- version = "1.0.0",
     opts = {
-      -- format = { timeout_ms = 20000 },
-      -- capabilities = {
-      --   textDocument = {
-      --     foldingRange = {
-      --       dynamicRegistration = false,
-      --       lineFoldingOnly = true,
-      --     },
-      --   },
-      -- },
       inlay_hints = {
         exclude = { "typescript", "typescriptreact", "vue" },
       },
@@ -69,25 +59,19 @@ return {
             },
           },
         },
-        -- marksman = {},
-        -- intelephense = {},
-        -- volar = {},
-        -- lemminx = {},
-        -- emmet_language_server = {},
-        -- typos_lsp = {},
         gopls = {
           settings = {
             gopls = {
               analyses = {
-                unreachable = true,
-                nilness = true,
-                unusedparams = true,
-                useany = true,
-                unusedwrite = true,
+                -- unreachable = true,
+                -- nilness = true,
+                -- unusedparams = true,
+                -- useany = true,
+                -- unusedwrite = true,
                 -- ST1003 = true,
-                undeclaredname = true,
-                fillreturns = true,
-                nonewvars = true,
+                -- undeclaredname = true,
+                -- fillreturns = true,
+                -- nonewvars = true,
                 -- shadow = true,
               },
             },
@@ -102,14 +86,4 @@ return {
       },
     },
   },
-  -- {
-  --   "antosha417/nvim-lsp-file-operations",
-  --   dependencies = {
-  --     "nvim-lua/plenary.nvim",
-  --     "nvim-neo-tree/neo-tree.nvim",
-  --   },
-  --   config = function()
-  --     require("lsp-file-operations").setup()
-  --   end,
-  -- },
 }
