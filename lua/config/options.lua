@@ -9,8 +9,6 @@ opt.colorcolumn = "80"
 vim.cmd("autocmd BufEnter * set formatoptions-=cro")
 vim.cmd("autocmd BufEnter * setlocal formatoptions-=cro")
 
--- prettier and biome
-vim.g.lazyvim_prettier_needs_config = true
 -- eslint
 vim.g.lazyvim_eslint_auto_format = true
 
