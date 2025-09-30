@@ -1,8 +1,7 @@
 local opt = vim.opt
 
 opt.relativenumber = false
--- opt.clipboard = "unnamedplus"
-opt.clipboard = ""
+opt.clipboard = "unnamedplus"
 opt.colorcolumn = "80"
 
 -- remove auto commenting new lines
@@ -45,44 +44,49 @@ sign("DapLogPoint", { text = "◆", texthl = "DapLogPoint", linehl = "", numhl =
 sign("DapStopped", { text = "", texthl = "DapStopped", linehl = "", numhl = "" })
 sign("DapBreakpointRejected", { text = "", texthl = "DapBreakpointRejected", linehl = "", numhl = "" })
 
-if vim.fn.has("wsl") == 1 then
-  vim.g.clipboard = {
-    name = "WslClipboard",
-    copy = {
-      ["+"] = "clip.exe",
-      ["*"] = "clip.exe",
-    },
-    paste = {
-      ["+"] = 'powershell.exe -c [Console]::Out.Write($(Get-Clipboard -Raw).tostring().replace("`r", ""))',
-      ["*"] = 'powershell.exe -c [Console]::Out.Write($(Get-Clipboard -Raw).tostring().replace("`r", ""))',
-    },
-    cache_enabled = 0,
-  }
-end
+vim.api.nvim_create_autocmd({ "BufReadPost", "BufNewFile" }, {
+  once = true,
+  callback = function()
+    if vim.fn.has("win32") == 1 or vim.fn.has("wsl") == 1 then
+      vim.g.clipboard = {
+        copy = {
+          ["+"] = "win32yank.exe -i --crlf",
+          ["*"] = "win32yank.exe -i --crlf",
+        },
+        paste = {
+          ["+"] = "win32yank.exe -o --lf",
+          ["*"] = "win32yank.exe -o --lf",
+        },
+      }
+    elseif vim.fn.has("unix") == 1 then
+      if vim.fn.executable("xclip") == 1 then
+        vim.g.clipboard = {
+          copy = {
+            ["+"] = "xclip -selection clipboard",
+            ["*"] = "xclip -selection clipboard",
+          },
+          paste = {
+            ["+"] = "xclip -selection clipboard -o",
+            ["*"] = "xclip -selection clipboard -o",
+          },
+        }
+      elseif vim.fn.executable("xsel") == 1 then
+        vim.g.clipboard = {
+          copy = {
+            ["+"] = "xsel --clipboard --input",
+            ["*"] = "xsel --clipboard --input",
+          },
+          paste = {
+            ["+"] = "xsel --clipboard --output",
+            ["*"] = "xsel --clipboard --output",
+          },
+        }
+      end
+    end
 
--- vim.g.clipboard = {
---   name = "xsel_override",
---   copy = {
---     ["+"] = "xsel --input --clipboard",
---     ["*"] = "xsel --input --primary",
---   },
---   paste = {
---     ["+"] = "xsel --output --clipboard",
---     ["*"] = "xsel --output --primary",
---   },
---   cache_enabled = 1,
--- }
-
--- sync with system clipboard on focus
-vim.api.nvim_create_autocmd({ "FocusGained" }, {
-  pattern = { "*" },
-  command = [[call setreg("@", getreg("+"))]],
-})
-
--- sync with system clipboard on focus
-vim.api.nvim_create_autocmd({ "FocusLost" }, {
-  pattern = { "*" },
-  command = [[call setreg("+", getreg("@"))]],
+    vim.opt.clipboard = "unnamedplus"
+  end,
+  desc = "Lazy load clipboard",
 })
 
 vim.api.nvim_create_autocmd("LspAttach", {
