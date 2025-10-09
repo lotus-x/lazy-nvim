@@ -4,7 +4,7 @@ return {
     name = "catppuccin",
     -- enabled = false,
     opts = {
-      -- flavour = "latte",
+      flavour = "latte",
       -- flavour = "mocha",
       transparent_background = true,
       float = {
