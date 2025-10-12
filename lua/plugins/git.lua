@@ -22,6 +22,12 @@ return {
         desc = "Diff View Current File History",
         remap = true,
       },
+      {
+        "<leader>gdr",
+        "<Cmd>DiffviewRefresh<CR>",
+        desc = "Diff View Refresh",
+        remap = true,
+      },
     },
   },
 }
