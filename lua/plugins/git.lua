@@ -3,6 +3,7 @@ return {
   -- { "ruifm/gitlinker.nvim", dependencies = { "nvim-lua/plenary.nvim" }, config = true },
   {
     "sindrets/diffview.nvim",
+    lazy = false,
     keys = {
       {
         "<leader>gdo",
