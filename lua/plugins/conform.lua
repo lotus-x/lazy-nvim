@@ -9,6 +9,11 @@ return {
       formatters_by_ft = {
         ledger = { "hledger-fmt" },
       },
+      formatters = {
+        ["hledger-fmt"] = {
+          args = { "-", "--no-diff", "--exit-zero-on-changes" },
+        },
+      },
     },
   },
 }
