@@ -1,15 +1,15 @@
 return {
   {
     "ellisonleao/gruvbox.nvim",
-    enabled = false,
+    -- enabled = false,
     priority = 1000,
     config = true,
     init = function()
-      vim.o.background = "light"
+      vim.o.background = "dark"
       vim.cmd.colorscheme("gruvbox")
     end,
     opts = {
-      contrast = "hard",
+      -- contrast = "hard",
     },
   },
   -- {
@@ -25,4 +25,10 @@ return {
   --     vim.cmd.colorscheme("gruvbox-material")
   --   end,
   -- },
+  {
+    "LazyVim/LazyVim",
+    opts = {
+      colorscheme = "gruvbox",
+    },
+  },
 }
