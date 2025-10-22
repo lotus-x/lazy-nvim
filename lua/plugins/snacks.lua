@@ -5,7 +5,7 @@ return {
       picker = {
         formatters = {
           file = {
-            truncate = 80,
+            min_width = 80,
           },
         },
       },
