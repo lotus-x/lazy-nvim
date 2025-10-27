@@ -2,6 +2,10 @@
 -- Default autocmds that are always set: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/autocmds.lua
 -- Add any additional autocmds here
 
+-- remove auto commenting new lines
+vim.cmd("autocmd BufEnter * set formatoptions-=cro")
+vim.cmd("autocmd BufEnter * setlocal formatoptions-=cro")
+
 vim.api.nvim_create_autocmd({ "BufReadPost", "BufNewFile" }, {
   once = true,
   callback = function()
@@ -77,3 +81,8 @@ vim.api.nvim_create_autocmd("LspAttach", {
 })
 
 vim.cmd("autocmd BufRead,BufNewFile *.hbs set filetype=html")
+
+vim.api.nvim_create_user_command("CopyPath", function()
+  local full_path = vim.fn.expand("%:p")
+  vim.fn.setreg("+", full_path)
+end, {})
