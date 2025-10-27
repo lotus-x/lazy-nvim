@@ -75,3 +75,5 @@ vim.api.nvim_create_autocmd("LspAttach", {
     end
   end,
 })
+
+vim.cmd("autocmd BufRead,BufNewFile *.hbs set filetype=html")
