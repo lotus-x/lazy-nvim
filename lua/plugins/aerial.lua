@@ -10,13 +10,15 @@ return {
         max_width = { 200, 0.5 },
       },
     },
-    -- keys = {
-    --   {
-    --     "<leader>o",
-    --     "<Cmd>AerialToggle<CR>",
-    --     desc = "Aerial Toggle",
-    --     remap = true,
-    --   },
-    -- },
+    keys = {
+      { "<leader>css", "<cmd>AerialToggle<cr>", desc = "Aerial Sidebar (Symbols)" },
+      {
+        "<leader>csf",
+        function()
+          require("aerial").snacks_picker()
+        end,
+        desc = "Aerial Finder (Symbols)",
+      },
+    },
   },
 }
