@@ -9,6 +9,7 @@ return {
       --  add hledger support
       vim.list_extend(opts.ensure_installed, {
         "ledger",
+        "nu",
       })
     end,
   },
