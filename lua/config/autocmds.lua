@@ -84,3 +84,10 @@ vim.api.nvim_create_user_command("CopyPath", function()
   local full_path = vim.fn.expand("%:p")
   vim.fn.setreg("+", full_path)
 end, {})
+
+-- restore cursor after exiting nvim
+vim.api.nvim_create_autocmd("VimLeave", {
+  callback = function()
+    vim.opt.guicursor = "a:ver25"
+  end,
+})
