@@ -93,6 +93,7 @@ return {
           },
         },
         nushell = {},
+        tilt_ls = {},
       },
     },
   },
