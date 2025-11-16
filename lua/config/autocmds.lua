@@ -83,8 +83,7 @@ vim.api.nvim_create_autocmd("LspAttach", {
 -- handle bars
 vim.cmd("autocmd BufRead,BufNewFile *.hbs set filetype=html")
 -- tilt
--- vim.cmd("autocmd BufRead,BufNewFile Tiltfile set syntax=starlark")
-vim.cmd("autocmd BufRead,BufNewFile Tiltfile set filetype=tiltfile")
+vim.cmd("autocmd BufRead,BufNewFile Tiltfile set filetype=tiltfile commentstring=#%s")
 
 vim.api.nvim_create_user_command("CopyPath", function()
   local full_path = vim.fn.expand("%:p")
