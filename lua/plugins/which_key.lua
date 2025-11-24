@@ -14,8 +14,7 @@ return {
       spec = {
         {
           mode = { "n", "v" },
-          { "<leader>S", group = "shortcuts" },
-          { "<leader>Sf", group = "flutter" },
+          { "<leader>cd", group = "flutter" },
         },
       },
     },

@@ -1,6 +1,6 @@
 return {
   {
-    "akinsho/flutter-tools.nvim",
+    "nvim-flutter/flutter-tools.nvim",
     lazy = false,
     dependencies = {
       "nvim-lua/plenary.nvim",
@@ -17,37 +17,37 @@ return {
     },
     keys = {
       {
-        "<leader>Sfs",
+        "<leader>cds",
         "<cmd>FlutterRun<cr>",
         desc = "Run the current project",
         remap = true,
       },
       {
-        "<leader>Sfr",
+        "<leader>cdr",
         "<cmd>FlutterRestart<cr>",
         desc = "Restart the current project",
         remap = true,
       },
       {
-        "<leader>SfR",
+        "<leader>cdR",
         "<cmd>FlutterReload<cr>",
         desc = "Reload the running project",
         remap = true,
       },
       {
-        "<leader>Sfe",
+        "<leader>cde",
         "<cmd>FlutterEmulators<cr>",
         desc = "Shows a list of emulators to choose from",
         remap = true,
       },
       {
-        "<leader>Sfq",
+        "<leader>cdq",
         "<cmd>FlutterQuit<cr>",
         desc = "Ends a running session",
         remap = true,
       },
       {
-        "<leader>Sfl",
+        "<leader>cdl",
         "<cmd>FlutterLspRestart<cr>",
         desc = "Restarts the dart language server",
         remap = true,
@@ -60,7 +60,7 @@ return {
     lazy = true,
     keys = {
       {
-        "<leader>Sfb",
+        "<leader>cdb",
         function()
           require("flutter-bloc").create_bloc()
         end,
@@ -68,7 +68,7 @@ return {
         remap = true,
       },
       {
-        "<leader>Sfc",
+        "<leader>cdc",
         function()
           require("flutter-bloc").create_cubit()
         end,
