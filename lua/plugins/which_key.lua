@@ -14,7 +14,7 @@ return {
       spec = {
         {
           mode = { "n", "v" },
-          { "<leader>cd", group = "flutter" },
+          { "<leader>F", group = "flutter" },
         },
       },
     },

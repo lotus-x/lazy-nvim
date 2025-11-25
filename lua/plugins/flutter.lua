@@ -17,37 +17,37 @@ return {
     },
     keys = {
       {
-        "<leader>cds",
+        "<leader>Fs",
         "<cmd>FlutterRun<cr>",
         desc = "Run the current project",
         remap = true,
       },
       {
-        "<leader>cdr",
+        "<leader>Fr",
         "<cmd>FlutterRestart<cr>",
         desc = "Restart the current project",
         remap = true,
       },
       {
-        "<leader>cdR",
+        "<leader>FR",
         "<cmd>FlutterReload<cr>",
         desc = "Reload the running project",
         remap = true,
       },
       {
-        "<leader>cde",
+        "<leader>Fe",
         "<cmd>FlutterEmulators<cr>",
         desc = "Shows a list of emulators to choose from",
         remap = true,
       },
       {
-        "<leader>cdq",
+        "<leader>Fq",
         "<cmd>FlutterQuit<cr>",
         desc = "Ends a running session",
         remap = true,
       },
       {
-        "<leader>cdl",
+        "<leader>Fl",
         "<cmd>FlutterLspRestart<cr>",
         desc = "Restarts the dart language server",
         remap = true,
@@ -60,7 +60,7 @@ return {
     lazy = true,
     keys = {
       {
-        "<leader>cdb",
+        "<leader>Fb",
         function()
           require("flutter-bloc").create_bloc()
         end,
@@ -68,7 +68,7 @@ return {
         remap = true,
       },
       {
-        "<leader>cdc",
+        "<leader>Fc",
         function()
           require("flutter-bloc").create_cubit()
         end,
