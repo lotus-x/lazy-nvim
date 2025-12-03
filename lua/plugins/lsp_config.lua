@@ -8,7 +8,7 @@ return {
         },
       },
       inlay_hints = {
-        exclude = { "typescript", "typescriptreact", "vue" },
+        exclude = { "typescript", "typescriptreact", "vue", "dart" },
       },
       servers = {
         -- lua_ls = {
