@@ -10,6 +10,9 @@ return {
           { "open_output", direction = "float", focus = true },
         },
       },
+      task_win = {
+        border = "rounded",
+      },
     },
   },
 }
