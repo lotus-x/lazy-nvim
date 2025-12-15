@@ -20,7 +20,7 @@ return {
               ["<BS>"] = "prev",
             },
             labels = "",
-            label = { before = false, after = false },
+            -- label = { before = false, after = false },
           })
         end,
         desc = "Treesitter Incremental Selection",
