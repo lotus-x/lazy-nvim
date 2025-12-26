@@ -6,6 +6,7 @@ opt.colorcolumn = "80"
 
 -- eslint
 vim.g.lazyvim_eslint_auto_format = true
+vim.g.lazyvim_prettier_needs_config = true
 
 if vim.g.neovide then
   -- vim.o.guifont = "JetBrainsMono Nerd Font:h9"
