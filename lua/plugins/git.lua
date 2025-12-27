@@ -31,4 +31,15 @@ return {
       },
     },
   },
+  {
+    "esmuellert/vscode-diff.nvim",
+    dependencies = { "MunifTanjim/nui.nvim" },
+    cmd = "CodeDiff",
+    branch = "next",
+    opts = {
+      explorer = {
+        view_mode = "tree",
+      },
+    },
+  },
 }
