@@ -32,10 +32,10 @@ return {
     },
   },
   {
-    "esmuellert/vscode-diff.nvim",
+    "esmuellert/codediff.nvim",
     dependencies = { "MunifTanjim/nui.nvim" },
     cmd = "CodeDiff",
-    branch = "next",
+    -- branch = "next",
     opts = {
       explorer = {
         view_mode = "tree",

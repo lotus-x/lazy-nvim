@@ -14,6 +14,7 @@ return {
       dev_log = {
         enabled = false,
       },
+      fvm = true,
     },
     keys = {
       {
