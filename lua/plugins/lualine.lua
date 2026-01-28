@@ -5,6 +5,9 @@ return {
       opts.sections.lualine_c[4] = { LazyVim.lualine.pretty_path({
         length = 10,
       }) }
+
+      opts.options.theme = "rose-pine"
+
       return opts
     end,
   },
