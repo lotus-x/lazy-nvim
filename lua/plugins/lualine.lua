@@ -6,8 +6,6 @@ return {
         length = 10,
       }) }
 
-      opts.options.theme = "rose-pine"
-
       return opts
     end,
   },
