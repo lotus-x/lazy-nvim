@@ -2,7 +2,7 @@ local opt = vim.opt
 
 opt.relativenumber = false
 opt.clipboard = "unnamedplus"
-opt.colorcolumn = "80"
+opt.colorcolumn = "100"
 
 -- eslint
 vim.g.lazyvim_eslint_auto_format = false
