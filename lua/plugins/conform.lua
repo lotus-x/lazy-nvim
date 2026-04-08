@@ -11,6 +11,7 @@ return {
         go = { "golines" },
         toml = { "taplo" },
         php = { "blade-formatter", "php_cs_fixer" },
+        proto = { "buf" },
       },
       formatters = {
         golines = {

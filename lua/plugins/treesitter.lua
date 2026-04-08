@@ -5,7 +5,7 @@ return {
       vim.treesitter.language.register("starlark", "tiltfile")
     end,
     opts = {
-      ensure_installed = { "graphql", "ledger", "nu", "starlark", "dart" },
+      ensure_installed = { "graphql", "ledger", "nu", "starlark", "dart", "protobuf" },
     },
   },
 }

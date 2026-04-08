@@ -99,6 +99,8 @@ return {
         },
         nushell = {},
         tilt_ls = {},
+        -- protols = {},
+        buf_ls = {},
       },
       setup = {
         vtsls = function()
