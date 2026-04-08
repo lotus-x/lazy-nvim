@@ -86,7 +86,6 @@ return {
         dartls = {
           enabled = false,
         },
-        biome = {},
         html = {},
         tailwindcss = {
           settings = {
