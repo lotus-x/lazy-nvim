@@ -100,6 +100,8 @@ return {
         tilt_ls = {},
         -- protols = {},
         buf_ls = {},
+        harper_ls = {},
+        cspell_ls = {},
       },
       setup = {
         vtsls = function()

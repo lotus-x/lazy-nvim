@@ -12,9 +12,6 @@ return {
         "php-cs-fixer",
         "blade-formatter",
 
-        "typos",
-        "typos-lsp",
-
         "tex-fmt",
 
         "hlint",

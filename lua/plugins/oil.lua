@@ -44,6 +44,18 @@ return {
           end,
           desc = "oil: Search in directory",
         },
+        ["gf"] = {
+          callback = function()
+            Snacks.picker.smart({ cwd = require("oil").get_current_dir() })
+          end,
+          desc = "oil: Search in directory",
+        },
+        ["gG"] = {
+          callback = function()
+            Snacks.picker.grep({ live = true, cwd = require("oil").get_current_dir() })
+          end,
+          desc = "oil: Grep in directory",
+        },
       },
       view_options = {
         show_hidden = true,
