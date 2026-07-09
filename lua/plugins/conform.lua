@@ -12,6 +12,10 @@ return {
         toml = { "taplo" },
         php = { "blade-formatter", "php_cs_fixer" },
         proto = { "buf" },
+        tex = { "tex-fmt" },
+        cls = { "tex-fmt" },
+        bib = { "tex-fmt" },
+        sty = { "tex-fmt" },
       },
       formatters = {
         golines = {

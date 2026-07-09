@@ -14,6 +14,10 @@ return {
 
         "typos",
         "typos-lsp",
+
+        "tex-fmt",
+
+        "hlint",
       },
     },
   },
