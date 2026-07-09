@@ -11,6 +11,7 @@ return {
         accept = {
           auto_brackets = {
             kind_resolution = {
+              enabled = true,
               blocked_filetypes = { "typescriptreact", "javascriptreact", "vue", "typescript" },
             },
           },
