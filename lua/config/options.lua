@@ -40,7 +40,8 @@ if vim.g.neovide then
   }
 
   vim.opt.linespace = 1
-  -- vim.g.neovide_transparency = 0.95
+  -- vim.g.neovide_opacity = 0.8
+  -- vim.g.neovide_window_blur = true
   vim.g.neovide_scroll_animation_length = 0.3
   vim.g.neovide_cursor_animation_length = 0.08
   vim.g.neovide_cursor_trail_size = 0.4
