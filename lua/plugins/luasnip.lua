@@ -12,7 +12,7 @@ return {
     end,
     keys = {
       {
-        "<C-L>",
+        "<C-S-L>",
         function()
           local luasnip = require("luasnip")
 
