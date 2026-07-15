@@ -21,6 +21,13 @@ return {
         golines = {
           args = { "--max-len=80", "--base-formatter=gofumpt" },
         },
+        oxfmt = {
+          condition = function(_, ctx)
+            -- Check if an oxfmt config file exists in the current project root
+            local root = vim.fs.root(ctx.buf, { ".oxfmtrc.json", ".oxfmtrc.jsonc", "oxfmt.config.ts" })
+            return root ~= nil
+          end,
+        },
       },
     },
   },

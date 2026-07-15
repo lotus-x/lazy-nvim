@@ -6,7 +6,7 @@ opt.colorcolumn = "100"
 
 -- eslint
 vim.g.lazyvim_eslint_auto_format = false
-vim.g.lazyvim_prettier_needs_config = false
+vim.g.lazyvim_prettier_needs_config = true
 
 if vim.g.neovide then
   vim.opt.linespace = 1
@@ -16,7 +16,7 @@ if vim.g.neovide then
   vim.g.neovide_cursor_animation_length = 0.08
   vim.g.neovide_cursor_trail_size = 0.4
   vim.g.neovide_cursor_vfx_mode = "railgun" -- Visual effect on cursor jump
-  --
+
   -- Normal, Visual, and Command modes paste via "+p
   vim.keymap.set({ "n", "v", "c" }, "<C-v>", '"+p', { silent = true })
   -- Insert mode needs <C-r>+ to paste text correctly without breaking typing flow
