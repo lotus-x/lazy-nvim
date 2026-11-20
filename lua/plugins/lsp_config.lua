@@ -11,19 +11,6 @@ return {
         exclude = { "typescript", "typescriptreact", "vue", "dart" },
       },
       servers = {
-        -- lua_ls = {
-        --   settings = {
-        --     Lua = {
-        --       workspace = {
-        --         checkThirdParty = false,
-        --       },
-        --       completion = {
-        --         callSnippet = "Replace",
-        --       },
-        --     },
-        --   },
-        -- },
-        -- vimls = {},
         cssls = {},
         cssmodules_ls = {},
         yamlls = {
@@ -64,24 +51,6 @@ return {
             },
           },
         },
-        gopls = {
-          settings = {
-            gopls = {
-              analyses = {
-                -- unreachable = true,
-                -- nilness = true,
-                -- unusedparams = true,
-                -- useany = true,
-                -- unusedwrite = true,
-                -- ST1003 = true,
-                -- undeclaredname = true,
-                -- fillreturns = true,
-                -- nonewvars = true,
-                -- shadow = true,
-              },
-            },
-          },
-        },
         graphql = {},
         dartls = {
           enabled = false,
@@ -96,9 +65,7 @@ return {
             },
           },
         },
-        nushell = {},
         tilt_ls = {},
-        -- protols = {},
         buf_ls = {},
         harper_ls = {},
         cspell_ls = {},

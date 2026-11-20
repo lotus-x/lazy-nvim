@@ -1,21 +1,16 @@
 return {
   {
     "stevearc/conform.nvim",
-    -- opts = function(_, opts)
-    --   opts.formatters_by_ft.go = opts.formatters_by_ft.go or {}
-    --   vim.list_extend(opts.formatters_by_ft.go, { "golines", "ray-x-go" })
-    -- end,
     opts = {
       formatters_by_ft = {
-        ["gohtmltmpl"] = { "prettierd", "prettier" },
-        go = { "golines" },
+        ["gohtmltmpl"] = { "prettierd", "prettier", stop_after_first = true },
+        -- golines runs gofumpt as its base formatter; goimports keeps imports in sync
+        go = { "goimports", "golines" },
         toml = { "taplo" },
-        php = { "blade-formatter", "php_cs_fixer" },
+        blade = { "blade-formatter" },
         proto = { "buf" },
         tex = { "tex-fmt" },
-        cls = { "tex-fmt" },
         bib = { "tex-fmt" },
-        sty = { "tex-fmt" },
       },
       formatters = {
         golines = {

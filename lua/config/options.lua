@@ -1,7 +1,6 @@
 local opt = vim.opt
 
 opt.relativenumber = false
-opt.clipboard = "unnamedplus"
 opt.colorcolumn = "100"
 
 -- eslint
@@ -17,26 +16,15 @@ if vim.g.neovide then
   vim.g.neovide_cursor_trail_size = 0.4
   vim.g.neovide_cursor_vfx_mode = "railgun" -- Visual effect on cursor jump
 
-  -- Normal, Visual, and Command modes paste via "+p
-  -- vim.keymap.set({ "n", "v", "c" }, "<C-v>", '"+p', { silent = true })
-  -- Insert mode needs <C-r>+ to paste text correctly without breaking typing flow
-  -- vim.keymap.set("i", "<C-v>", "<C-r>+", { silent = true })
-  -- vim.keymap.set("t", "<C-S-v>", [[<C-\><C-n>"+pi]])
   vim.keymap.set("t", "<C-S-v>", function()
     local keys = vim.api.nvim_replace_termcodes('<C-\\><C-n>"+pi', true, false, true)
     vim.api.nvim_feedkeys(keys, "n", false)
-  end)
+  end, { desc = "Paste from system clipboard" })
 
   local function paste()
     vim.api.nvim_paste(vim.fn.getreg("+"), true, -1)
   end
-  vim.keymap.set({ "n", "i", "c", "t" }, "<C-v>", paste)
+  -- Not mapped in normal mode so <C-v> keeps starting visual block mode
+  -- (`p` already pastes the system clipboard via clipboard=unnamedplus)
+  vim.keymap.set({ "i", "c", "t" }, "<C-v>", paste, { desc = "Paste from system clipboard" })
 end
-
-local sign = vim.fn.sign_define
-
-sign("DapBreakpoint", { text = "●", texthl = "DapBreakpoint", linehl = "", numhl = "" })
-sign("DapBreakpointCondition", { text = "", texthl = "DapBreakpointCondition", linehl = "", numhl = "" })
-sign("DapLogPoint", { text = "◆", texthl = "DapLogPoint", linehl = "", numhl = "" })
-sign("DapStopped", { text = "", texthl = "DapStopped", linehl = "", numhl = "" })
-sign("DapBreakpointRejected", { text = "", texthl = "DapBreakpointRejected", linehl = "", numhl = "" })

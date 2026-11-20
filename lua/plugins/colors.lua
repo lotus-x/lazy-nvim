@@ -1,13 +1,11 @@
 return {
   {
     "uga-rosa/ccc.nvim",
-    lazy = true,
     keys = {
       {
         "<leader>cp",
         "<Cmd>CccPick<CR>",
         desc = "Color Picker",
-        remap = true,
         mode = { "v", "n" },
       },
     },

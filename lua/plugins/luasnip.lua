@@ -1,11 +1,9 @@
 return {
   {
     "L3MON4D3/LuaSnip",
-    config = function()
+    config = function(_, opts)
       local luasnip = require("luasnip")
-
-      -- luasnip.setup(opts)
-      -- require("luasnip.loaders.from_vscode").lazy_load({ paths = { "./snippets" } })
+      luasnip.setup(opts)
 
       luasnip.filetype_extend("typescript", { "javascript" })
       luasnip.filetype_extend("typescriptreact", { "javascriptreact" })
@@ -21,6 +19,7 @@ return {
           end
         end,
         mode = "i",
+        desc = "Expand Snippet",
       },
     },
   },

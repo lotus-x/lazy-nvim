@@ -11,6 +11,9 @@ return {
     "folke/snacks.nvim",
   },
   cmd = "Neogit",
+  opts = {
+    diff_viewer = "codediff",
+  },
   keys = {
     { "<leader>gn", "<cmd>Neogit<cr>", desc = "Show Neogit UI" },
   },

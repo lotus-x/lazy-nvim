@@ -2,67 +2,38 @@
 -- Default autocmds that are always set: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/autocmds.lua
 -- Add any additional autocmds here
 
--- remove auto commenting new lines
-vim.cmd("autocmd BufEnter * set formatoptions-=cro")
-vim.cmd("autocmd BufEnter * setlocal formatoptions-=cro")
+local group = vim.api.nvim_create_augroup("user_autocmds", { clear = true })
 
-vim.api.nvim_create_autocmd({ "BufReadPost", "BufNewFile" }, {
-  once = true,
+-- don't continue comments on new lines (ftplugins reset formatoptions, so set it per filetype)
+vim.api.nvim_create_autocmd("FileType", {
+  group = group,
   callback = function()
-    if vim.fn.has("win32") == 1 or vim.fn.has("wsl") == 1 then
-      vim.g.clipboard = {
-        copy = {
-          ["+"] = "win32yank.exe -i --crlf",
-          ["*"] = "win32yank.exe -i --crlf",
-        },
-        paste = {
-          ["+"] = "win32yank.exe -o --lf",
-          ["*"] = "win32yank.exe -o --lf",
-        },
-      }
-    elseif vim.fn.has("unix") == 1 then
-      if vim.fn.executable("xclip") == 1 then
-        vim.g.clipboard = {
-          copy = {
-            ["+"] = "xclip -selection clipboard",
-            ["*"] = "xclip -selection clipboard",
-          },
-          paste = {
-            ["+"] = "xclip -selection clipboard -o",
-            ["*"] = "xclip -selection clipboard -o",
-          },
-        }
-      elseif vim.fn.executable("xsel") == 1 then
-        vim.g.clipboard = {
-          copy = {
-            ["+"] = "xsel --clipboard --input",
-            ["*"] = "xsel --clipboard --input",
-          },
-          paste = {
-            ["+"] = "xsel --clipboard --output",
-            ["*"] = "xsel --clipboard --output",
-          },
-        }
-      end
-    end
-
-    vim.opt.clipboard = "unnamedplus"
+    vim.opt_local.formatoptions:remove({ "c", "r", "o" })
   end,
-  desc = "Lazy load clipboard",
+  desc = "Disable comment continuation",
 })
 
--- handle bars
-vim.cmd("autocmd BufRead,BufNewFile *.hbs set filetype=html")
--- tilt
-vim.cmd("autocmd BufRead,BufNewFile Tiltfile set filetype=tiltfile commentstring=#%s")
+-- handlebars templates are edited as html
+vim.filetype.add({ extension = { hbs = "html" } })
+
+-- tilt (Tiltfile is detected natively, but has no commentstring)
+vim.api.nvim_create_autocmd("FileType", {
+  group = group,
+  pattern = "tiltfile",
+  callback = function()
+    vim.bo.commentstring = "# %s"
+  end,
+  desc = "Tiltfile commentstring",
+})
 
 vim.api.nvim_create_user_command("CopyPath", function()
   local full_path = vim.fn.expand("%:p")
   vim.fn.setreg("+", full_path)
-end, {})
+end, { desc = "Copy the current file's absolute path" })
 
 -- restore cursor after exiting nvim
 vim.api.nvim_create_autocmd("VimLeave", {
+  group = group,
   callback = function()
     vim.opt.guicursor = "a:ver25"
   end,

@@ -2,40 +2,16 @@ return {
   -- { "akinsho/git-conflict.nvim", version = "*", config = true },
   -- { "ruifm/gitlinker.nvim", dependencies = { "nvim-lua/plenary.nvim" }, config = true },
   {
-    "sindrets/diffview.nvim",
-    lazy = false,
-    keys = {
-      {
-        "<leader>gdo",
-        "<Cmd>DiffviewOpen<CR>",
-        desc = "Diff View Open",
-        remap = true,
-      },
-      {
-        "<leader>gdh",
-        "<Cmd>DiffviewFileHistory<CR>",
-        desc = "Diff View File History",
-        remap = true,
-      },
-      {
-        "<leader>gdc",
-        "<Cmd>DiffviewFileHistory %<CR>",
-        desc = "Diff View Current File History",
-        remap = true,
-      },
-      {
-        "<leader>gdr",
-        "<Cmd>DiffviewRefresh<CR>",
-        desc = "Diff View Refresh",
-        remap = true,
-      },
-    },
-  },
-  {
     "esmuellert/codediff.nvim",
     dependencies = { "MunifTanjim/nui.nvim" },
     cmd = "CodeDiff",
     -- branch = "next",
+    keys = {
+      { "<leader>gvo", "<Cmd>CodeDiff<CR>", desc = "CodeDiff Open/Toggle" },
+      { "<leader>gvh", "<Cmd>CodeDiff history<CR>", desc = "CodeDiff History" },
+      { "<leader>gvc", "<Cmd>CodeDiff history %<CR>", desc = "CodeDiff Current File History" },
+      { "<leader>gvc", ":CodeDiff history<CR>", mode = "x", desc = "CodeDiff Selection History" },
+    },
     opts = {
       explorer = {
         view_mode = "tree",
